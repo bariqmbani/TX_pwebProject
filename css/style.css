@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	font-family: Agency FB;
 }
 
 .navbar {
@@ -41,11 +42,72 @@ nav li {
 nav a {
 	color: white;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 30px;
 	text-transform: uppercase;
 	/*background: black;*/	
 }
 
-nav a:hover{
+nav a:hover {
 	color: #e5cd34;
+}
+/*******************/
+
+.banner {
+
+	height: 500px;
+}
+
+/******************/
+
+.container{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.tracking {
+	background-color: pink;
+	float: left;
+	width: 25%;
+	/*border-right: 5px solid #8c030d;*/
+	height: 200px;
+}
+.container label {
+	color: #8c030d;
+	font-size: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.container input[type=text] {
+    padding: 10px 15px;
+    border: 4px solid #8c030d;
+    font-family: Agency FB;
+    font-size: 20px;
+    text-align: center;
+}
+.container input[type=text]::-webkit-input-placeholder {
+	font-family: Agency FB;
+	font-weight: bold;
+	font-size: 17px;
+	text-align: center;
+}
+.container input[type=text]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+.button {
+    background-color: #8c030d;
+    border: none;
+    color: white;
+    font-family: Agency FB;
+    margin: 10px 0;
+    padding: 5px 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.tariff-check {
+	background-color: green;
+	float: right;
+	width: 60%;
 }
