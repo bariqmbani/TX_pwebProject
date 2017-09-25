@@ -5,9 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.css">
 </head>
 
 <body>
+
 	<header>
 		<div class="navbar">
 			<img id="logo" src="img/logo.png">
@@ -24,24 +26,47 @@
 	</header>
 	
 	<div class="banner">
-		<img id="fotobanner" src="img/banner.png">
+
 	</div>
 
 	<div class="container">
-		<div class="tracking">
-			<form name="tracking-finder">
-				<label>Tracking</label>
-				<br>
-				<input type="text" placeholder="e.g 10200384">
-				<br>
-				<button class="button">Find</button>
-			</form>
-		</div>
+		<div class="row">
+			<div class="tracking col-sm-4">
+				<form name="tracking-finder">
+					<label>Tracking</label>
+					<br>
+					<input type="text" placeholder="e.g 10200384">
+					<br>
+					<button class="button">Find</button>
+				</form>
+			</div>
+			
+			<div class="fromto col-sm-3">
+				<form name="fromto">
+					<table border="0">
+						<tr>
+							<td><label>From</label></td>
+							<td><input type="text"></td>
+						</tr>
+						<tr>
+							<td><br></td>
+							<td><br></td>
+						</tr>
+						<tr>
+							<td><label>To</label></td>
+							<td><input type="text"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
 
+			<div class="tariff-check col-sm-5">
 
-		<div class="tariff-check">
-			<h2>Tariff Check</h2>
+			</div>	
 		</div>
+		
 	</div>
+
+	
 </body>
 </html>
