@@ -32,7 +32,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="tracking col-sm-4">
-				<form name="tracking-finder">
+				<form method="POST" name="tracking-finder">
 					<label>Tracking</label>
 					<br>
 					<input type="text" placeholder="e.g 10200384">
@@ -41,8 +41,8 @@
 				</form>
 			</div>
 			
-			<div class="fromto col-sm-3">
-				<form name="fromto">
+			<div class="fromto col-sm-4">
+				<form method="POST" name="fromto">
 					<table border="0">
 						<tr>
 							<td><label>From</label></td>
@@ -60,8 +60,24 @@
 				</form>
 			</div>
 
-			<div class="tariff-check col-sm-5">
-
+			<div class="tariff-check col-sm-4">
+				<form method="POST" name="tariff">
+					<label>Tariff Check</label>
+					<table border="0">
+						<tr>
+							<td align="center"><label>Weight</label></td>
+							<td><input type="text"></td>
+							<td style="font-weight: bold; color: gray; font-size: 1.2em;">KG</td>
+						</tr>
+						<tr>
+							<td align="center"><label>Dimension</label></td>
+							<td><input type="text" placeholder="L"></td>
+							<td><input type="text" placeholder="W"></td>
+							<td><input type="text" placeholder="H"></td>
+						</tr>
+					</table>
+					<button class="button">Check</button>
+				</form>
 			</div>	
 		</div>
 		
