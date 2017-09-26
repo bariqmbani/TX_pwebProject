@@ -1,4 +1,4 @@
-# TX_pwebProject
+https://bariqmbani.github.io/TX_pwebProject/
 # Tugas Praktikum Pemrograman Web
 
 # Anggota: 
