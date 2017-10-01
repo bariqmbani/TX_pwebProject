@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/bootstrap-grid.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="js/navbar.js"></script>
 </head>
 
 <body>
@@ -13,7 +16,9 @@
 	<header>
 		<div class="navbar">
 			<img id="logo" src="img/logo.png">
-			<nav>
+			<img class="menu-toggle" src="img/toggle.png" width="10vw" >
+			
+			<nav class="site-nav">
 				<ul>
 					<!--<li><font color="yellow">Home</font></li>-->
 					<li class="active-link">Home</li>
@@ -21,12 +26,20 @@
 					<li><a href="#">Services</a></li>
 					<li><a href="#">About Us</a></li>
 				</ul>
-			</nav>	
-		</div>			
+			</nav>
+			
+		</div>
 	</header>
-	
-	<div class="banner">
 
+	<div class="banner cycle-slideshow">
+		<span class="cycle-prev">&#9001</span>
+		<span class="cycle-next">&#9002</span>
+		<span class="cycle-pager"></span>
+		<img src="img/banner.png" height="100%" width="100%">
+		<img src="img/banner2.jpg" height="100%" width="100%">
+		<img src="img/banner3.jpg" height="100%" width="100%">
+		<img src="img/banner4.jpg" height="100%" width="100%">
+		<img src="img/banner5.jpg" height="100%" width="100%">
 	</div>
 
 	<div class="container">
@@ -40,7 +53,7 @@
 					<button class="button">Find</button>
 				</form>
 			</div>
-			
+
 			<div class="fromto col-sm-4">
 				<form method="POST" name="fromto">
 					<table border="0">
@@ -78,11 +91,11 @@
 					</table>
 					<button class="button">Check</button>
 				</form>
-			</div>	
+			</div>
 		</div>
-		
+
 	</div>
 
-	
+
 </body>
 </html>

@@ -1,41 +1,48 @@
-@media (max-width: 1800px) {
-  nav a{
-    font-size: 30px;
+@media (max-width: 768px) {
+  
+  #logo {
+    float: none;
+    position: relative;
   }
-  nav li{
-    margin-left: 150px;
-  }
-}
 
-@media (max-width: 1300px) {
-  nav a{
-    font-size: 30px;
+  .menu-toggle {
+    display: block;
+    float: right;
+    margin-top: 2vw;
   }
-  nav li{
-    margin-left: 100px;
-  }
-}
 
-@media (max-width: 1000px) {
-  nav a{
-    font-size: 25px;
+  nav li {
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 0.5vw;
   }
-  nav li{
-    margin-left: 35px;
+  
+  .site-nav {
+    height: 0;
+    overflow: hidden;
   }
-}
 
-@media (max-width: 630px) {
-  nav a{
-    font-size: 8px;
+  .site-nav--open {
+    height: auto;
   }
-  nav li{
-    margin-left: 15px;
+
+  nav {
+    float: none;
   }
-  #logo{
-    width: 25px;
+
+  .banner {
+    height: 30vh;
   }
-  header{
-    height: 50px;
+
+  .cycle-prev, .cycle-next {
+    top: 12vh;
   }
+  
+  .cycle-pager span {
+    border: 1px solid #8c030d;
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+
 }
