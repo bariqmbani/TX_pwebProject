@@ -30,83 +30,91 @@
 	</header>
 
 	<div class="container">
-	<h1>Deliver Now</h1> <br>
+		<h1 class="header">Deliver Now</h1> <br>
 		<div class="row">
 
 			<div class="sender-info col-sm-6">
+
 				<form method="POST" name="sender-info">
+					<h2 class="label">Sender Information</h2>
+					<table border="0">
+						<tr>
+							<td><label>Name</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-				<label>Sender Information</<label>
-				<table border="0">
-				<tr>
-					<td><label>Name</label></td>
-					<td><input type="text"></td>
-				</tr>
+						<tr>
+							<td><label>Phone</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-				<tr>
-					<td><label>Phone</label></td>
-					<td><input type="text"></td>
-				</tr>
+						<tr>
+							<td><label>City</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-				<tr>
-					<td><label>City</label></td>
-					<td><input type="text"></td>
-				</tr>
-
-				<tr>
-					<td><label>Address</label></td>
-					<td><input type="text"></td>
-				</tr>
-				</table>
-				</div>
+						<tr>
+							<td><label>Address</label></td>
+							<td><input class="address" type="text"></td>
+						</tr>
+					</table>
+					</div>
 
 				<div class="recipient-info col-sm-6">
-				<label>Recipient Information</label>
-				<table border="0">
-					<tr>
-					<td><label>Name</label></td>
-					<td><input type="text"></td>
-				</tr>
+					<h2 class="label">Recipient Information</h2>
+					<table border="0">
+						<tr>
+							<td><label>Name</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-				<tr>
-					<td><label>Phone</label></td>
-					<td><input type="text"></td>
-				</tr>
+						<tr>
+							<td><label>Phone</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-				<tr>
-					<td><label>City</label></td>
-					<td><input type="text"></td>
-				</tr>
+						<tr>
+							<td><label>City</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-				<tr>
-					<td><label>Address</label></td>
-					<td><input type="text"></td>
-				</tr>
-				</table>
+						<tr>
+							<td><label>Address</label></td>
+							<td><input class="address" type="text"></td>
+						</tr>
+					</table>
 				</div>
 
-			<div class="package-info col-sm-12">
-				<label>Package Information</label>
-				<table>
-					<tr>
-						<td><label>Item Name</label></td>
-						<td><input type="text"></td>
-					</tr>
+				<div class="package-info col-sm-6">
+					<h2 class="label">Package Information</h2>
+					<table>
+						<tr>
+							<td><label>Item Name</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-					<tr>
-						<td><label>Weight</label></td>
-						<td><input type="text"></td>
-					</tr>
+						<tr>
+							<td><label>Weight</label></td>
+							<td><input type="text"></td>
+						</tr>
 
-					<tr>
-						<td><label>Dimension</label></td>
-						<td><input type="text" placeholder="L"></td>
-						<td><input type="text" placeholder="W"></td>
-						<td><input type="text" placeholder="H"></td>
-					</tr>
-				</table>
-				<button class="button">Deliver Now</button>
-			</div>
+						
+					</table>
+				</div>
+				
+				<div class="package-info col-sm-6">
+					<table class="dimension">
+						<tr>
+							<td><label>Dimension</label></td>
+							<td><input type="text" placeholder="L"></td>
+							<td><input type="text" placeholder="W"></td>
+							<td><input type="text" placeholder="H"></td>
+						</tr>
+					</table>
+				</div>
+
+				<button class="button deliver-btn">Deliver Now</button>
+
 			</form>
 		</div>
 	</div>

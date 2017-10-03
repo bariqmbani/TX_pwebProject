@@ -4,6 +4,7 @@ body {
 	background: url(../img/bg.png);
 }
 
+
 .navbar {
 	width: 80%;
 	margin: 0 auto;
@@ -140,7 +141,7 @@ nav a:hover {
 
 .container label {
 	color: #8c030d;
-	font-size: 25px;
+	font-size: 2vw;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -150,8 +151,8 @@ nav a:hover {
 }
 
 .container input[type=text] {
-    padding: 2px 10px;
-    border: 4px solid #8c030d;
+    padding: 0.2vh 1vw;
+    border: 0.3vw solid #8c030d;
     font-family: Agency FB;
     font-size: 20px;
     text-align: center;
@@ -211,3 +212,56 @@ nav a:hover {
 .tariff-check table {
 	margin-top: 10px;
 }
+/*******************/
+.container .header {
+	text-align: center;
+	text-transform: uppercase;
+	color: #8c030d;
+	font-size: 3vw;
+	font-weight: bold;
+	margin-top: 5vh;
+	margin-bottom: -1vh;
+}
+
+.container .label {
+	text-align: center;
+	text-transform: uppercase;
+	color: #8c030d;
+	font-size: 2vw;
+}
+
+.sender-info table, .recipient-info table, .package-info table {
+	margin-left: 8vw;
+}
+.sender-info table input, .recipient-info table input, .package-info table input {
+	margin-left: 5vw; 
+}
+
+input.address {
+	height: 10vh;
+}
+
+.sender-info table td, .recipient-info table td {
+	vertical-align: top;
+}
+
+.package-info {
+	margin-top: 1vw;
+}
+
+.package-info .dimension {
+	margin-top: 12vh;
+}
+
+.package-info .dimension input[type=text] {
+	padding: 0;
+	width: 40px;
+	margin-left: 15px;
+}
+
+.deliver-btn{
+	margin-top: 3vh;
+	margin-left: 10vw;
+}
+
+
