@@ -4,7 +4,6 @@ body {
 	background: url(../img/bg.png);
 }
 
-
 .navbar {
 	width: 80%;
 	margin: 0 auto;
@@ -263,5 +262,4 @@ input.address {
 	margin-top: 3vh;
 	margin-left: 10vw;
 }
-
-
+/**************************************************/

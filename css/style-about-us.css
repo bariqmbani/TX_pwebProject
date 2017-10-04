@@ -1,0 +1,163 @@
+body {
+	margin: 0;
+	font-family: Agency FB;
+	background: #8c030d;
+}
+
+.navbar {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header  {
+	background: #eaeaea;
+	margin-bottom: 10vh;
+}
+
+header::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#logo {
+	width: 6vw;
+	float: left;
+	margin-top: 1vw;
+	position: absolute;
+}
+
+.menu-toggle {
+	display: none;
+	cursor: pointer;
+}
+
+nav {
+	float: right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin-left: 12vw;
+	padding-top: 3vw;
+	position: relative;
+}
+
+nav a {
+	font-weight: bold;
+	color: #8c030d;
+	text-decoration: none;
+	font-size: 2vw;
+	text-transform: uppercase;
+	/*background: black;*/
+}
+
+nav a:hover {
+	color: #e5cd34;
+}
+
+.active-link {
+	font-weight: bold;
+	font-size: 2vw;
+	text-transform: uppercase;
+	cursor: default;
+	color: #e5cd34;
+}
+/********************************************************/
+
+.welcome-page {
+	height: 85vh;
+	color: #cacaca;
+	text-align: center;
+}
+
+.welcome-page h1 {
+	font-size: 4vw;
+	line-height: 5vh;
+}
+
+.team {
+	width: 50vw;
+	margin: auto;
+	margin-bottom: 5vh; 
+}
+
+.team a {
+	margin: 2.5vh auto;	
+}
+
+.team-photo {
+	width: 15vw;
+	height: 15vw;
+}
+
+.history-btn {
+	background-color: #cacaca;
+	text-decoration: none;
+	color: #8c030d;
+    padding: 1vh 1vw;
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+.history-btn:hover {
+	background-color: #e5cd34;
+	color: #8c030d;
+}
+
+/************************/
+
+
+
+/*****************************/
+
+.history-page {
+	height: 100vh;
+	color: #cacaca;
+}
+
+.history-page h1 {
+	font-size: 3.5vw;
+	line-height: 50vh;
+	margin-bottom: -15vh;
+}
+
+.history-page p {
+	font-size: 2vw;
+}
+
+
+/*******************************************************/
+
+.profile-content {
+	width: 90vw;
+	margin: auto;
+}
+
+.team-page .profile {
+	height: 100vh;
+}
+
+.team-page .photo {
+	height: 100vh;
+}
+
+.team-page .profile-photo {
+	width: 35vw;
+	height: 35vw;
+	float: none;
+	margin: 15vh 4.5vw;
+}
+
+.team-page .profile p {
+	color: #e5cd34;
+	text-align: center;
+	font-size: 5vw;
+	margin: 18vh 3vw;
+}
