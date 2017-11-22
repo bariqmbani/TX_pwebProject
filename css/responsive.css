@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+  
+  #logo {
+    float: none;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    float: right;
+    margin-top: 2vw;
+  }
+
+  nav li {
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 0.5vw;
+  }
+  
+  .site-nav {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .site-nav--open {
+    height: auto;
+  }
+
+  nav {
+    float: none;
+  }
+
+  .banner {
+    height: 30vh;
+  }
+
+  .cycle-prev, .cycle-next {
+    top: 12vh;
+  }
+  
+  .cycle-pager span {
+    border: 1px solid #8c030d;
+    width: 1.5vw;
+    height: 1.5vw;
+  }
+
+}
