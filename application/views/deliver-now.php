@@ -20,10 +20,10 @@
 			<nav class="site-nav">
 				<ul>
 					<!--<li><font color="yellow">Home</font></li>-->
-					<li><a href="index.html">Home</a></li>
+					<li><a href="<?php echo base_url(); ?>index.php/c_index">Home</a></li>
 					<li class="active-link">Deliver Now</li>
-					<li><a href="services.html">Services</a></li>
-					<li><a href="about-us.html">About Us</a></li>
+					<li><a href="<?php echo base_url(); ?>index.php/c_index/services">Services</a></li>
+					<li><a href="<?php echo base_url(); ?>index.php/c_index/about">About Us</a></li>
 				</ul>
 			</nav>
 		</div>

@@ -3,25 +3,25 @@
 <head>
 	<title>Thunder Express</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style-about-us.css">
-	<link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.css">
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/navbar.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style-about-us.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-grid.css">
+	<script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/navbar.js"></script>
 </head>
 
 <body>
 
 	<header>
 		<div class="navbar">
-			<img id="logo" src="img/logo.png">
-			<img class="menu-toggle" src="img/toggle.png" width="10vw" >
+			<img id="logo" src="<?php echo base_url(); ?>assets/img/logo.png">
+			<img class="menu-toggle" src="<?php base_url(); ?>assets/img/toggle.png" width="10vw" >
 			
 			<nav class="site-nav">
 				<ul>
 					<!--<li><font color="yellow">Home</font></li>-->
-					<li><a href="index.html">Home</a></li>
-					<li><a href="deliver-now.html">Deliver Now</li>
+					<li><a href="<?php echo base_url(); ?>index.php/c_index">Home</a></li>
+					<li><a href="<?php echo base_url()."index.php/c_index/deliver" ?>">Deliver Now</li>
 					<li><a href="services.html">Services</a></li>
 					<li class="active-link">About Us</li>
 				</ul>
@@ -36,9 +36,9 @@
 			<h1>Meet Our Team</h1>
 			<div class="team">
 				<div class="row">
-					<a href="#bariq"><img class="team-photo" id="team-photo-one" src="img/bariq.png" alt=""></a>
-					<a href="#syifa"><img class="team-photo" id="team-photo-two" src="img/syifa.png" alt=""></a>
-					<a href="#adit"><img class="team-photo" id="team-photo-three" src="img/adit.png" alt=""></a>
+					<a href="#bariq"><img class="team-photo" id="team-photo-one" src="<?php echo base_url(); ?>assets/img/bariq.png" alt=""></a>
+					<a href="#syifa"><img class="team-photo" id="team-photo-two" src="<?php echo base_url(); ?>assets/img/syifa.png" alt=""></a>
+					<a href="#adit"><img class="team-photo" id="team-photo-three" src="<?php echo base_url(); ?>assets/img/adit.png" alt=""></a>
 				</div>
 			</div>
 			<a href="#history" class="history-btn">Our History</a>
@@ -58,7 +58,7 @@
 						<p>As Front End Developer and Web Designer</p>
 					</div>
 					<div class="photo col-sm-6">
-						<img class="profile-photo" src="img/bariq.png" alt="Bariq Mbani">
+						<img class="profile-photo" src="<?php echo base_url(); ?>assets/img/bariq.png" alt="Bariq Mbani">
 					</div>
 				</div>
 			</div>
@@ -66,7 +66,7 @@
 			<div class="team-page" id="syifa">
 				<div class="row">
 					<div class="photo col-sm-6">
-						<img class="profile-photo" src="img/syifa.png" alt="Syifa Fauziyah Nurul Islam">
+						<img class="profile-photo" src="<?php echo base_url(); ?>assets/img/syifa.png" alt="Syifa Fauziyah Nurul Islam">
 					</div>
 					<div class="profile col-sm-6">
 						<p>Syifa Fauziyah Nurul Islam</p>
@@ -82,7 +82,7 @@
 						<p>As Front End Developer and Web Designer</p>
 					</div>
 					<div class="photo col-sm-6">
-						<img class="profile-photo" src="img/adit.png" alt="Aditya Rizky Fadillah">
+						<img class="profile-photo" src="<?php echo base_url(); ?>assets/img/adit.png" alt="Aditya Rizky Fadillah">
 					</div>
 				</div>
 			</div>

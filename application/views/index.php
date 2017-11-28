@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 	<title>Thunder Express</title>
@@ -24,7 +24,7 @@
 					<li class="active-link">Home</li>
 					<li><a href="<?php echo base_url()."index.php/c_index/deliver" ?>">Deliver Now</a></li>
 					<li><a href="<?php echo base_url()."index.php/c_index/services" ?>">Services</a></li>
-					<li><a href="about-us.html">About Us</a></li>
+					<li><a href="<?php echo base_url()."index.php/c_index/about" ?>">About Us</a></li>
 				</ul>
 			</nav>
 			
