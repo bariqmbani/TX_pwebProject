@@ -2,6 +2,8 @@ body {
 	margin: 0;
 	font-family: Agency FB;
 	background: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .navbar {
@@ -279,3 +281,14 @@ input.address {
 	margin-left: 10vw;
 }
 /**************************************************/
+
+.prohibited-box {
+	display: block;
+	position: relative;
+	width: 50%;
+	left: 25%;
+	top: 25px;
+}
+.prohibited-box img {
+	margin-top: 50px;
+}

@@ -23,7 +23,7 @@
 					<!--<li><font color="yellow">Home</font></li>-->
 					<li class="active-link">Home</li>
 					<li><a href="<?php echo base_url()."index.php/c_index/deliver" ?>">Deliver Now</a></li>
-					<li><a href="<?php echo base_url()."index.php/c_index/services" ?>">Services</a></li>
+					<li><a href="<?php echo base_url()."index.php/c_index/Prohibited" ?>">Prohibited</a></li>
 					<li><a href="<?php echo base_url()."index.php/c_index/about" ?>">About Us</a></li>
 				</ul>
 			</nav>

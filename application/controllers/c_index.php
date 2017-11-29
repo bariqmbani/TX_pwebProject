@@ -14,4 +14,9 @@ class C_index extends CI_Controller {
 	{
 		$this->load->view('about-us');
 	}
+	public function prohibited()
+	{
+		$this->load->view('prohibited');
+	}
 }
+
