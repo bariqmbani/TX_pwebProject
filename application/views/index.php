@@ -25,6 +25,57 @@
 					<li><a href="<?php echo base_url()."index.php/c_index/deliver" ?>">Deliver Now</a></li>
 					<li><a href="<?php echo base_url()."index.php/c_index/Prohibited" ?>">Prohibited</a></li>
 					<li><a href="<?php echo base_url()."index.php/c_index/about" ?>">About Us</a></li>
+					<li>
+						<div id="button">
+							<a href="#popup">Login</a>
+						</div>
+						<div id="popup">
+							<div class="window">
+							<a href="#" class="close-button" title="Close">X</a>
+							<form action="POST" name="login">
+								<label>Login</label><br>
+								<label>Username </label>
+								<input type="text"><br>
+								<label>Password</label>
+								<input type="password"><br>
+								<button class="button">Login</button><br> <br>		
+								<label>New On Thunder Express</label><br>	
+								<div id="button">
+									<a href="#popup-signup">Sign Up</a>
+								</div>
+								</form>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div id="button">
+							<a href="#popup-signup">Sign Up</a>
+						</div>
+						<div id="popup-signup">
+							<div class="window-signup">
+							<a href="#" class="close-button" title="Close">X</a>
+							<form action="POST" name="login">
+								<label>Sign Up</label><br>
+								<label>Username</label>
+								<input type="text"><br>
+								<label>Password</label>
+								<input type="password"><br>
+								<label>Confirm Pasword</label>
+								<input type="password"><br>
+								<label>Nama</label>
+								<input type="text"><br>
+								<label>Phone</label>
+								<input type="text"><br>
+								<label>City</label>
+								<input type="text"><br>
+								<label>Address</label>
+								<input type="text"><br>
+								<button class="button">Sign Up</button><br> <br>		
+								</form>
+							</div>
+						</div>
+					</li>
+
 				</ul>
 			</nav>
 			
