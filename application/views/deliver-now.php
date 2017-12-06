@@ -24,6 +24,8 @@
 					<li class="active-link">Deliver Now</li>
 					<li><a href="<?php echo base_url(); ?>index.php/c_index/prohibited">Prohibited</a></li>
 					<li><a href="<?php echo base_url(); ?>index.php/c_index/about">About Us</a></li>
+					<?php
+					if($this->session->userdata('status') != 'login' ){?>
 					<li>
 						<div id="button">
 							<a href="#popup">Login</a>
@@ -31,17 +33,17 @@
 						<div id="popup">
 							<div class="window">
 							<a href="#" class="close-button" title="Close">X</a>
-							<form action="POST" name="login">
+							<form action="<?php echo base_url()."index.php/c_index/login" ?>" method="POST" name="login">
 								<label>Login</label><br>
 								<label>Username </label>
-								<input type="text"><br>
+								<input type="text" name="username"><br>
 								<label>Password</label>
-								<input type="password"><br>
+								<input type="password" name="password"><br>
 								<button class="button">Login</button><br> <br>		
 								<label>New On Thunder Express</label><br>	
 								<div id="button">
 									<a href="#popup-signup">Sign Up</a>
-								</div>
+								</div>	
 								</form>
 							</div>
 						</div>
@@ -53,27 +55,30 @@
 						<div id="popup-signup">
 							<div class="window-signup">
 							<a href="#" class="close-button" title="Close">X</a>
-							<form action="POST" name="login">
+							<form action="<?php echo base_url('index.php/c_index/signup') ?>" method="POST" name="signup">
 								<label>Sign Up</label><br>
 								<label>Username</label>
-								<input type="text"><br>
+								<input type="text" name="username"><br>
 								<label>Password</label>
-								<input type="password"><br>
+								<input type="password" name="password"><br>
 								<label>Confirm Pasword</label>
-								<input type="password"><br>
+								<input type="password" name="c_password"><br>
 								<label>Nama</label>
-								<input type="text"><br>
+								<input type="text" name="nama"><br>
 								<label>Phone</label>
-								<input type="text"><br>
-								<label>City</label>
-								<input type="text"><br>
-								<label>Address</label>
-								<input type="text"><br>
-								<button class="button">Sign Up</button><br> <br>		
-								</form>
-							</div>
-						</div>
+								<input type="text" name="phone"><br>
+								<div id="button">
+									<input type="submit" value="SIGN UP" name="submit" class="button">
+								</div>
 					</li>
+					<?php }
+					else{
+						?>
+						<li>
+						<div id="button">
+							<a href="<?php echo base_url('index.php/c_index/logout')?>">Logout</a>
+						</div>
+					</li> <?php } ?>
 
 				</ul>
 			</nav>
@@ -86,7 +91,7 @@
 
 			<div class="sender-info col-sm-6">
 
-				<form method="POST" name="sender-info">
+				<form method="POST" name="sender-info" <?php echo base_url('index.php/c_index/transaksi') ?>>
 					<h2 class="label">Sender Information</h2>
 					<table border="0">
 						<tr>
