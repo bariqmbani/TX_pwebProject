@@ -52,4 +52,9 @@ class Users extends CI_Model {
 		return $hasil->result();
 	}
 
+	public function tampilByUser($username){
+		$query = $this->db->get_where('users', array('username' => $username));
+		return $query;
+	}
+
 }

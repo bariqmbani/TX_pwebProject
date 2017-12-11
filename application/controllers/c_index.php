@@ -35,7 +35,7 @@ class C_index extends CI_Controller {
 			'status' => 'login'
 		);
 		$this->session->set_userdata($sess_user);
-		redirect('c_index/deliver');
+		redirect(base_url('c_index/deliver'));
 	}
 
 	public function logout(){
@@ -101,11 +101,22 @@ class C_index extends CI_Controller {
 
 	public function deliver()
 	{
+		//if($this->session->userdata('status') !== 'login') {
+			//redirect('c_index');
+			//return;
+		//}
+		//$this->load->view('deliver-now');
+
 		if($this->session->userdata('status') !== 'login') {
-			redirect('c_index');
+			redirect(base_url('index.php/c_index'));
 			return;
 		}
-		$this->load->view('deliver-now');
+		else {
+			$username = $this->session->userdata('username');
+			$data["users"] = $this->users->tampilByUser($username)->result();
+		}
+		//var_dump($data['users']); die();
+		$this->load->view('deliver-now', $data);
 	}
 
 	public function about()

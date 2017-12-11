@@ -94,15 +94,23 @@
 				<form method="POST" name="sender-info" action="<?php echo base_url('index.php/c_index/transaksi')?>">
 					<h2 class="label">Sender Information</h2>
 					<table border="0">
+						<?php 
+							//var_dump($users); die();
+        					foreach ($users as $row) {
+
+          				?>
 						<tr>
 							<td><label>Name</label></td>
-							<td><input type="text" name="nama"></td>
+							<td><input type="text" name="nama" value="<?php echo $row->nama;?>"></td>
 						</tr>
 
 						<tr>
 							<td><label>Phone</label></td>
-							<td><input type="text" name="phone"></td>
+							<td><input type="text" name="no_telp" value="<?php echo $row->no_telp;?>"></td>
 						</tr>
+						<?php
+				         }
+				        ?>
 
 						<tr>
 							<td><label>City</label></td>
