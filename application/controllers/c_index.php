@@ -149,17 +149,30 @@ class C_index extends CI_Controller {
 			'dimensi' => $dimensi
 			);
 		$id_barang = $this->users->ambilId_barang($this->session->userdata('username'));
+		$kota1 = $this->input->post('kota1');
+		$kota2 = $this->input->post('kota2');
+		//$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2);
+		$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2)->id_tujuan;
+		$harga_jarak = $this->users->harga_jarak($id_tujuan)->harga;
+		//$harga_jarak = $this->users->harga_jarak($id_tujuan);
+		$total_harga = $harga_berat + $harga_jarak;
+
 		$transaksi = array(
 			'alamat_pengirim' => $this->input->post('alamat_pengirim'),
 			'nama_penerima' => $this->input->post('nama_penerima'),
 			'telp_penerima' => $this->input->post('telp_penerima'),
 			'alamat_penerima' => $this->input->post('alamat_penerima'),
-			'id_barang' => $id_barang->id_barang
+			'id_barang' => $id_barang->id_barang,
+			'id_tujuan' => $id_tujuan,
+			'total_harga' => $total_harga
 			);
+
+
+		/*
 		$tujuan = array(
 			'kota1' => $this->input->post('kota1'),
 			'kota2' => $this->input->post('kota2')
-		);
+		);*/
 
 		if($this->users->deliv($barang,$transaksi,$dimensi) == TRUE)
 		{

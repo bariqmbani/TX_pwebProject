@@ -53,13 +53,14 @@ class Users extends CI_Model {
 		}
 	}
 
-	public function cek_kota($tujuan){
-		$hasil = $this->db->get_where('tujuan', 
-			array(
-				'kota1' => $tujuan['kota1'],
-				'kota2' => $user_input['kota2']
-			));
-		return $hasil->result();
+	public function ambilId_tujuan($kota1, $kota2){
+		$id_tujuan = $this->db->select('id_tujuan')->where('kota1',$kota1)->where('kota2',$kota2)->get('tujuan');
+		return $id_tujuan->row();
+	}
+
+	public function harga_jarak($id_tujuan){
+		$harga_jarak = $this->db->select('harga')->where('id_tujuan',$id_tujuan)->get('tujuan');
+		return $harga_jarak->row();
 	}
 
 	public function tampilByUser($username){
