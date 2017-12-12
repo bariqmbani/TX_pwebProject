@@ -10,7 +10,7 @@
 	<script src="<?php echo base_url(); ?>assets/js/navbar.js"></script>
 </head>
 
-<body>
+<body> 
 
 	<header>
 		<div class="navbar">
@@ -190,7 +190,5 @@
 			</form>
 		</div>
 	</div>
-
-
 </body>
 </html>

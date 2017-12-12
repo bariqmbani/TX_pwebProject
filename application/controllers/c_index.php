@@ -107,6 +107,8 @@ class C_index extends CI_Controller {
 		//}
 		//$this->load->view('deliver-now');
 
+		$data["kota"] = $this->users->getKota();
+
 		if($this->session->userdata('status') !== 'login') {
 			redirect(base_url('index.php/c_index'));
 			return;
@@ -136,20 +138,27 @@ class C_index extends CI_Controller {
 		$H = $this->input->post('H');
 		$dimensi = $L*$W*$H;
 
+		$berat_barang = $this->input->post('berat_barang');
+		$harga_berat = 10000*$berat_barang;
+
 		$barang = array(
+			'username' => $this->session->userdata('username'),
 			'nama_barang' => $this->input->post('nama_barang'),
-			'berat_barang' => $this->input->post('berat_barang'),
+			'berat_barang' => $berat_barang,
+			'harga' => $harga_berat,
 			'dimensi' => $dimensi
 			);
+		$id_barang = $this->users->ambilId_barang($this->session->userdata('username'));
 		$transaksi = array(
 			'alamat_pengirim' => $this->input->post('alamat_pengirim'),
 			'nama_penerima' => $this->input->post('nama_penerima'),
 			'telp_penerima' => $this->input->post('telp_penerima'),
-			'alamat_penerima' => $this->input->post('alamat_penerima')
+			'alamat_penerima' => $this->input->post('alamat_penerima'),
+			'id_barang' => $id_barang->id_barang
 			);
 		$tujuan = array(
 			'kota1' => $this->input->post('kota1'),
-			'kota2' =>  ($this->input->post('kota2'))
+			'kota2' => $this->input->post('kota2')
 		);
 
 		if($this->users->deliv($barang,$transaksi,$dimensi) == TRUE)
@@ -172,10 +181,10 @@ class C_index extends CI_Controller {
 		else {
 			$username = $this->session->userdata('username');
 			$data["users"] = $this->users->tampilByUser($username)->result();
-			$data2["barang"] = $this->users->tampilBarang()->result();
+			//$data2["barang"] = $this->users->tampilBarang($username)->result();
 		}
-		//var_dump($data['users']); die();
-		$this->load->view('resi', $data && $data2);
+		//var_dump($data['barang']); die();
+		$this->load->view('resi', $data);
 		//$this->load->view('resi', $data2);
 	}
 

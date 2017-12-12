@@ -24,6 +24,11 @@ class Users extends CI_Model {
 		}
 	}
 
+	public function ambilId_barang($username){
+		$id_barang = $this->db->select('id_barang')->where('username',$username)->get('barang'); 
+		return $id_barang->row();
+	}
+
 	public function deliv($barang,$transaksi,$dimensi){
 		//$q = $this->db->select('barang.id_barang, transaksi.id_barang') //select what we need
                       //->join('transaksi', 'barang.id_barang = transaksi.id_transaksi') //do join
@@ -36,8 +41,9 @@ class Users extends CI_Model {
         		 //->where('id_transaksi=id_barang');
 
         //$this->db->insert(barang ('dimensi'), $dimensi);
-        //$this->db->insert('transaksi',array('id_barang'=>'id_barang'))
-                 //->where('id_transaksi = id_barang');//specify column name
+        //$id_barang = $this->db->select('id_barang')->where('username',$username)->get('barang'); 
+        //$this->db->insert('transaksi',array('id_barang'=>$id_barang));
+                 //->where('i = id_barang');//specify column name
 
 		if ($this->db->insert('barang',$barang) && $this->db->insert('transaksi',$transaksi)){
 			return TRUE;
@@ -61,9 +67,14 @@ class Users extends CI_Model {
 		return $query;
 	}
 
-	public function tampilBarang(){
+	public function tampilBarang($username){
 		$query = $this->db->get('barang');
 		return $query;
+	}
+
+	public function getKota(){
+		$response = $this->db->get('tujuan');
+		return $response;
 	}
 
 }
