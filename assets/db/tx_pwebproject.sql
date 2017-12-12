@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Des 2017 pada 17.08
+-- Generation Time: 12 Des 2017 pada 14.30
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `barang` (
   `id_barang` int(5) NOT NULL,
+  `username` varchar(12) DEFAULT NULL,
   `nama_barang` varchar(15) NOT NULL,
   `berat_barang` int(3) DEFAULT NULL,
   `dimensi` int(3) DEFAULT NULL,
@@ -38,9 +39,16 @@ CREATE TABLE `barang` (
 -- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `berat_barang`, `dimensi`, `harga`) VALUES
-(3, 'baju', 10, NULL, NULL),
-(4, 'kaos', 3, NULL, NULL);
+INSERT INTO `barang` (`id_barang`, `username`, `nama_barang`, `berat_barang`, `dimensi`, `harga`) VALUES
+(11, NULL, 'rapia', 4, 2, NULL),
+(13, NULL, 'makanan', 4, 12, NULL),
+(14, NULL, 'gajah', 100, 20, NULL),
+(15, NULL, 'kaos kaki', 1, 2, NULL),
+(16, 'aaa', 'gajah', 100, 6, NULL),
+(17, 'aaa', 'kaos', 2, 6, 20000),
+(18, 'aaa', 'gajah', 100, 9, 1000000),
+(19, 'aaa', 'gajah', 100, 9, 1000000),
+(20, 'aaa', 'gajah', 100, 9, 1000000);
 
 -- --------------------------------------------------------
 
@@ -65,8 +73,12 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `alamat_pengirim`, `nama_penerima`, `telp_penerima`, `alamat_penerima`, `id_tujuan`, `id_barang`, `total_harga`) VALUES
-(3, '', 'sdsa', 'dsfds', '123', 'dsfs', 0, 0, 0),
-(4, '', 'abc', 'vita', '1234', 'bds', 0, 0, 0);
+(11, '', 'ada', 'dsd', '222', 'sdsa', 0, 0, 0),
+(12, '', 'sda', 'sd', '333', 'asdas', 0, 0, 0),
+(13, '', 'sdas', 'sd', '777', 'sdh', 0, 0, 0),
+(14, '', 'sdcas', 'ds', '000', 'dzcs', 0, 0, 0),
+(15, '', 'sad', 'jshd', '888', 'ajsdh', 0, 0, 0),
+(16, '', 'asd', 'sad', '999', 'sd', 0, 16, 0);
 
 -- --------------------------------------------------------
 
@@ -131,7 +143,8 @@ INSERT INTO `users` (`username`, `password`, `nama`, `no_telp`) VALUES
 -- Indexes for table `barang`
 --
 ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id_barang`);
+  ADD PRIMARY KEY (`id_barang`),
+  ADD KEY `username` (`username`);
 
 --
 -- Indexes for table `transaksi`
@@ -159,12 +172,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_barang` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_transaksi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `barang`
+--
+ALTER TABLE `barang`
+  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
