@@ -112,11 +112,11 @@
 			</div>
 			<form method="POST" name="check" action="<?php echo base_url('index.php/c_index/check')?>">
 			<div class="fromto col-sm-4">
-				<form method="POST" name="fromto" action="<?php echo base_url('index.php/c_index/check')?>">
+				<form method="POST" name="fromto">
 					<table border="0">
 						<tr>
 							<td><label>From</label></td>
-							<td><input type="text" name="kota1"></td>
+							<td><input type="text" name="kota1" value="<?php echo $kota1;?>"></td>
 						</tr>
 						<tr>
 							<td><br></td>
@@ -124,26 +124,19 @@
 						</tr>
 						<tr>
 							<td><label>To</label></td>
-							<td><input type="text" name="kota2"></td>
+							<td><input type="text" name="kota2" value="<?php echo $kota2; ?>"></td>
 						</tr>
 					</table>
 				</form>
 			</div>
 
 			<div class="tariff-check col-sm-4">
-				<form method="POST" name="tariff" action="<?php echo base_url('index.php/c_index/check')?>">
+				<form method="POST" name="tariff">
 					<label>Tariff Check</label>
 					<table border="0">
 						<tr>
-							<td align="center"><label>Weight</label></td>
-							<td><input type="text" name="berat_barang"></td>
-							<td style="font-weight: bold; color: gray; font-size: 1.2em;">KG</td>
-						</tr>
-						<tr>
-							<td align="center"><label>Dimension</label></td>
-							<td><input type="text" placeholder="L" name="L"></td>
-							<td><input type="text" placeholder="W" name="W"></td>
-							<td><input type="text" placeholder="H" name="H"></td>
+							<td align="center"><label>Total Harga</label></td>
+							<td><input type="text" name="total_harga" value="<?php echo $total_harga;?>"></td>
 						</tr>
 					</table>
 					<input type="submit" value="Check" name="submit" class="button">

@@ -24,8 +24,14 @@ class Users extends CI_Model {
 		}
 	}
 
-	public function ambilId_barang($username){
-		$id_barang = $this->db->select('id_barang')->where('username',$username)->get('barang'); 
+	public function ambilId_barang($username,$nama_barang,$berat_barang,$dimensi,$harga_berat){
+		$id_barang = $this->db->select('id_barang')
+					          ->where('username',$username)
+					          ->where('nama_barang',$nama_barang)
+					          ->where('berat_barang',$berat_barang)
+					          ->where('dimensi',$dimensi)
+					          ->where('harga',$harga_berat)
+					          ->get('barang'); 
 		return $id_barang->row();
 	}
 

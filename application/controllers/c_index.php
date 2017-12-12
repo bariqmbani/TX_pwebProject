@@ -140,15 +140,16 @@ class C_index extends CI_Controller {
 
 		$berat_barang = $this->input->post('berat_barang');
 		$harga_berat = 10000*$berat_barang;
+		$nama_barang = $this->input->post('nama_barang');
 
 		$barang = array(
 			'username' => $this->session->userdata('username'),
-			'nama_barang' => $this->input->post('nama_barang'),
+			'nama_barang' => $nama_barang,
 			'berat_barang' => $berat_barang,
 			'harga' => $harga_berat,
 			'dimensi' => $dimensi
 			);
-		$id_barang = $this->users->ambilId_barang($this->session->userdata('username'));
+		$id_barang = $this->users->ambilId_barang($this->session->userdata('username'),$nama_barang,$berat_barang,$dimensi,$harga_berat)->id_barang;
 		$kota1 = $this->input->post('kota1');
 		$kota2 = $this->input->post('kota2');
 		//$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2);
@@ -162,7 +163,7 @@ class C_index extends CI_Controller {
 			'nama_penerima' => $this->input->post('nama_penerima'),
 			'telp_penerima' => $this->input->post('telp_penerima'),
 			'alamat_penerima' => $this->input->post('alamat_penerima'),
-			'id_barang' => $id_barang->id_barang,
+			'id_barang' => $id_barang,
 			'id_tujuan' => $id_tujuan,
 			'total_harga' => $total_harga
 			);
@@ -199,6 +200,31 @@ class C_index extends CI_Controller {
 		//var_dump($data['barang']); die();
 		$this->load->view('resi', $data);
 		//$this->load->view('resi', $data2);
+	}
+
+	//hiraukan aja fungsi ini sama bawahnya
+	public function check(){
+		$L = $this->input->post('L');
+		$W = $this->input->post('W');
+		$H = $this->input->post('H');
+		$dimensi = $L*$W*$H;
+
+		$berat_barang = $this->input->post('berat_barang');
+		$harga_berat = 10000*$berat_barang;
+
+		$kota1 = $this->input->post('kota1');
+		$kota2 = $this->input->post('kota2');
+		//$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2);
+		$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2)->id_tujuan;
+		$harga_jarak = $this->users->harga_jarak($id_tujuan)->harga;
+		//$harga_jarak = $this->users->harga_jarak($id_tujuan);
+		$total_harga = $harga_berat + $harga_jarak;
+
+		redirect(base_url('index.php/c_index/tampil_check'));
+	}
+
+	public function tampil_check(){
+		$this->load->view('check');
 	}
 
 }
