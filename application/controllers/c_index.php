@@ -32,10 +32,10 @@ class C_index extends CI_Controller {
 		// user session
 		$sess_user = array(
 			'username' => $user_input['username'],
-			'status' => 'login'
+			'status' => 'login' 
 		);
 		$this->session->set_userdata($sess_user);
-		redirect(base_url('c_index/deliver'));
+		redirect(base_url('index.php/c_index/deliver'));
 	}
 
 	public function logout(){
@@ -131,9 +131,15 @@ class C_index extends CI_Controller {
 
 	public function transaksi()
 	{
+		$L = $this->input->post('L');
+		$W = $this->input->post('W');
+		$H = $this->input->post('H');
+		$dimensi = $L*$W*$H;
+
 		$barang = array(
 			'nama_barang' => $this->input->post('nama_barang'),
-			'berat_barang' => $this->input->post('berat_barang')
+			'berat_barang' => $this->input->post('berat_barang'),
+			'dimensi' => $dimensi
 			);
 		$transaksi = array(
 			'alamat_pengirim' => $this->input->post('alamat_pengirim'),
@@ -146,7 +152,7 @@ class C_index extends CI_Controller {
 			'kota2' =>  ($this->input->post('kota2'))
 		);
 
-		if($this->users->deliv($barang,$transaksi) == TRUE)
+		if($this->users->deliv($barang,$transaksi,$dimensi) == TRUE)
 		{
 			redirect(base_url('index.php/c_index/resi'));
 		}
@@ -154,13 +160,23 @@ class C_index extends CI_Controller {
 		{
 			//harus di isi error nya mau gmn
 		}
-
 		
 	}
 
 	public function resi()
 	{
-		$this->load->view('resi');
+		if($this->session->userdata('status') !== 'login') {
+			redirect(base_url('index.php/c_index'));
+			return;
+		}
+		else {
+			$username = $this->session->userdata('username');
+			$data["users"] = $this->users->tampilByUser($username)->result();
+			$data2["barang"] = $this->users->tampilBarang()->result();
+		}
+		//var_dump($data['users']); die();
+		$this->load->view('resi', $data && $data2);
+		//$this->load->view('resi', $data2);
 	}
 
 }

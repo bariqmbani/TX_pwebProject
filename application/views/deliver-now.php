@@ -160,6 +160,12 @@
 						<tr>
 							<td><label>Weight</label></td>
 							<td><input type="text" name="berat_barang"></td>
+							<!--<td><label>KG</label></td><br>-->
+						</tr>
+						
+						<tr>
+							
+							<td><label style="font-size: 12px">*berat dibulatkan<br> ke atas dalam kg</label></td>
 						</tr>
 
 						
@@ -170,9 +176,9 @@
 					<table class="dimension">
 						<tr>
 							<td><label>Dimension</label></td>
-							<td><input type="text" placeholder="L"></td>
-							<td><input type="text" placeholder="W"></td>
-							<td><input type="text" placeholder="H"></td>
+							<td><input type="text" placeholder="L" name="L"></td>
+							<td><input type="text" placeholder="W" name="W"></td>
+							<td><input type="text" placeholder="H" name="H"></td>
 						</tr>
 					</table>
 				</div>
