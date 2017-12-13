@@ -107,7 +107,45 @@
 					<br>
 					<input type="text" placeholder="e.g 10200384">
 					<br>
-					<button class="button">Find</button>
+					<div id="button">
+							<a href="#resi">FIND</a>
+					</div>
+					<div id="resi">
+							<div class="window-resi">
+							<a href="#" class="close-button" title="Close">X</a>
+								<label>Tracking</label><br>
+								<table>
+								<tr>
+									<th>Transaction Number</th>
+									<th>Date Shipment</th>
+									<th>Destination</th>
+								</tr>
+								<tr>
+									<td>(empty)</td>
+									<td>(empty)</td>
+									<td>(empty)</td>
+								</tr>
+								</table>
+									<table>
+										<tr>
+											<th>Sipper</th>
+											<th>Consignee</th>
+										</tr>
+										<tr>
+											<td>(empty)</td>
+											<td>(empty)</td>
+										</tr>
+									</table>
+								<table>
+									<tr>
+										<th>Shipment Status</th>
+									</tr>
+									<tr>
+										<td>(empty)</td>
+									</tr>
+								</table>
+							</div>
+					</div>
 				</form>
 			</div>
 			<form method="POST" name="check" action="<?php echo base_url('index.php/c_index/check')?>">
@@ -146,7 +184,20 @@
 							<td><input type="text" placeholder="H" name="H"></td>
 						</tr>
 					</table>
-					<input type="submit" value="Check" name="submit" class="button">
+					<div id="button">
+							<a href="#check-harga">Check</a>
+						</div>
+					<div id="check-harga">
+							<div class="window-check-harga">
+							<a href="#" class="close-button" title="Close">X</a>
+							<label>Tariff Check</label>
+							<table>
+								<tr>
+									<td>Cost</td>
+									<td>:</td>
+									<td>(empty)</td>
+								</tr>
+							</table>
 				</form>
 			</div>
 			</form>

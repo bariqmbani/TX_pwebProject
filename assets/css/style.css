@@ -383,3 +383,86 @@ margin: 15% auto;
 #popup-signup:target {
 visibility: visible;
 }
+
+#resi {
+width: 100%;
+height: 100%;
+position: fixed;
+background: rgba(0,0,0,.7);
+top: 0;
+left: 0;
+z-index: 9999;
+visibility: hidden;
+}
+
+.window-resi {
+width: 400px;
+height: 225px;
+background: #fff;
+border-radius: 10px;
+position: relative;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0,0,0,.4);
+text-align: center;
+margin: 15% auto;
+}
+
+#resi:target {
+visibility: visible;
+}
+
+
+#check-harga {
+width: 100%;
+height: 100%;
+position: fixed;
+background: rgba(0,0,0,.7);
+top: 0;
+left: 0;
+z-index: 9999;
+visibility: hidden;
+}
+
+.window-check-harga {
+width: 400px;
+height: 225px;
+background: #fff;
+border-radius: 10px;
+position: relative;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0,0,0,.4);
+text-align: center;
+margin: 15% auto;
+}
+
+#check-harga:target {
+visibility: visible;
+}
+
+
+#order {
+width: 100%;
+height: 100%;
+position: fixed;
+background: rgba(0,0,0,.7);
+top: 0;
+left: 0;
+z-index: 9999;
+visibility: hidden;
+}
+
+.window-order {
+width: 400px;
+height: 250px;
+background: #fff;
+border-radius: 10px;
+position: relative;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0,0,0,.4);
+text-align: center;
+margin: 15% auto;
+}
+
+#order:target {
+visibility: visible;
+}

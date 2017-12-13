@@ -183,10 +183,55 @@
 					</table>
 				</div>
 
-				<div class="button deliver-btn">
-					<input type="submit" value="Deliver Now" name="submit" class="button">
-				</div>
+				<div id="button">
+							<a href="#order">Check</a>
+					</div>
+					<div id="order">
+							<div class="window-order">
+							<a href="#" class="close-button" title="Close">X</a>
+							<label>Transaction Success</label>
+							<table>	
+									<th>Transaction Number</th>
+									<th>Date Shipment</th>
+									<th>Destination</th>
+								</tr>
+								<tr>
+									<td>(empty)</td>
+									<td>(empty)</td>
+									<td>(empty-CITY)</td>
+								</tr>
+								</table>
+									<table>
+										<tr>
+											<th>Sipper</th>
+											<th>Consignee</th>
+										</tr>
+										<tr>	
+											<td>(empty-name)</td>
+											<td>(empty-name)</td>
+										</tr>
+										<tr>
+											<td>(empty-phone)</td>
+											<td>(empty-phone)</td>
+										</tr>
+										<tr>
+											<td>(empty-address)</td>
+											<td>(empty-address)</td>
 
+										</tr>
+									</table>
+								<table>
+									<tr>
+										<th>Item Name</th>
+										<th>Weight</th>
+										<th>Volume</th>
+									</tr>
+									<tr>
+										<td>(empty-item)</td>
+										<td>(empty-weight)</td>
+										<td>(empty-volume)</td>
+									</tr>
+							</table>
 			</form>
 		</div>
 	</div>
