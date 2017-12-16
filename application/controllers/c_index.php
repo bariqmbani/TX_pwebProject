@@ -149,6 +149,7 @@ class C_index extends CI_Controller {
 			'harga' => $harga_berat,
 			'dimensi' => $dimensi
 			);
+		$this->users->insert_barang($barang);
 		$id_barang = $this->users->ambilId_barang($this->session->userdata('username'),$nama_barang,$berat_barang,$dimensi,$harga_berat)->id_barang;
 		$kota1 = $this->input->post('kota1');
 		$kota2 = $this->input->post('kota2');
@@ -193,8 +194,15 @@ class C_index extends CI_Controller {
 			return;
 		}
 		else {
+			$this->load->model('Users');
+
 			$username = $this->session->userdata('username');
+			$id = $this->input->post['id'];
+			$id_barang = $this->input->post['id_barang'];
 			$data["users"] = $this->users->tampilByUser($username)->result();
+			$data['response'] = $this->users->tampilById($id);
+			var_dump($data); die();
+			$data['tampil'] = $this->users->tampilTransaksi($id_barang);
 			//$data2["barang"] = $this->users->tampilBarang($username)->result();
 		}
 		//var_dump($data['barang']); die();

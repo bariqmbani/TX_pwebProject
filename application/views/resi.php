@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -93,28 +94,44 @@
 		<h1 class="header">RESI</h1> <br>
 		<div class="row">
 
-			<div class="sender-info col-sm-6">
+			<div class="sender-info col-sm-12">
 
 				<form method="POST" name="sender-info" action="<?php echo base_url('index.php/c_index/transaksi')?>">
-					<h2 class="label">Shipping Information</h2>
+					<h2 class="label">Sender Information</h2>
 					<table border="0">
+					<?php
+						//var_dump($users); die();
+        					foreach ($tampil as $row) {
+
+          				?>
+
+          				<tr>	
+								<td>Transaction Number</td>
+          				</tr>
+          				<tr>	
+								<td><?php echo $row->id_transaksi;?></td>
+          				</tr>
+          				<?php }
+          				?>
 						<?php 
 							//var_dump($users); die();
         					foreach ($users as $row) {
 
           				?>
+          				<tr>
+          					<td><label>Shipper</label></td>
+          					<td><label>Consignee</label></td>
+          				</tr>          				
 						<tr>
-							<td><label>Sender Name</label></td>
-							<td><label>: <?php echo $row->nama;?></label></td>
+							<td><label><?php echo $row->nama;?></label></td>
 						</tr>
 
 						<tr>
-							<td><label>Sender Phone</label></td>
-							<td><label>: <?php echo $row->no_telp;?></label></td>
+							<td><label><?php echo $row->no_telp;?></label></td>
 						</tr>
 						<?php
 				         }
-				         foreach ($barang as $row) {
+				         foreach ($response->result() as $row) {
 				        ?>
 
 						<tr>

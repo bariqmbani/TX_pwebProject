@@ -184,8 +184,9 @@
 				</div>
 
 				<div id="button">
-							<a href="#order">Check</a>
+							<input type="submit" name="deliver" class="button" value="Deliver">
 					</div>
+					</form>
 					<div id="order">
 							<div class="window-order">
 							<a href="#" class="close-button" title="Close">X</a>
@@ -232,7 +233,7 @@
 										<td>(empty-volume)</td>
 									</tr>
 							</table>
-			</form>
+			
 		</div>
 	</div>
 </body>

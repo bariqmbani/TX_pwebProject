@@ -102,13 +102,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="tracking col-sm-4">
-				<form method="POST" name="tracking-finder">
 					<label>Tracking</label>
 					<br>
+					<form method="post" action="<?php echo base_url(); ?>c_index.php/resi">
 					<input type="text" placeholder="e.g 10200384">
 					<br>
 					<div id="button">
-							<a href="#resi">FIND</a>
+							<a href="#resi">
+								<input type="submit" value="FIND" class="button">
+							</a>
+						</form>
 					</div>
 					<div id="resi">
 							<div class="window-resi">
@@ -146,7 +149,6 @@
 								</table>
 							</div>
 					</div>
-				</form>
 			</div>
 			<form method="POST" name="check" action="<?php echo base_url('index.php/c_index/check')?>">
 			<div class="fromto col-sm-4">

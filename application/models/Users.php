@@ -84,4 +84,20 @@ class Users extends CI_Model {
 		return $response;
 	}
 
+	public function tampilById($id){
+		$this->db->where('id_barang', $id);
+		return $this->db->get('barang');
+	}
+
+	public function tampilTransaksi($id_barang){
+		$this->db->where('id_barang', $id_barang);
+		return $this->db->get('transaksi');
+	}
+
+	public function insert_barang($barang){
+  $query = $this->db->insert('barang',$barang);
+  return $query;
+ }
+
+
 }
