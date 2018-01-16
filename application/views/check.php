@@ -112,37 +112,25 @@
 			</div>
 			<form method="POST" name="check" action="<?php echo base_url('index.php/c_index/check')?>">
 			<div class="fromto col-sm-4">
-				<form method="POST" name="fromto">
-					<table border="0">
-						<tr>
-							<td><label>From</label></td>
-							<td><input type="text" name="kota1" value="<?php echo $kota1;?>"></td>
-						</tr>
-						<tr>
-							<td><br></td>
-							<td><br></td>
-						</tr>
-						<tr>
-							<td><label>To</label></td>
-							<td><input type="text" name="kota2" value="<?php echo $kota2; ?>"></td>
-						</tr>
-					</table>
-				</form>
+				
 			</div>
 
 			<div class="tariff-check col-sm-4">
 				<form method="POST" name="tariff">
-					<label>Tariff Check</label>
+					
 					<table border="0">
 						<tr>
 							<td align="center"><label>Total Harga</label></td>
-							<td><input type="text" name="total_harga" value="<?php echo $total_harga;?>"></td>
+							<td><input style="width: 150px" type="text" name="total_harga" value="<?php echo $total_harga;?>"></td>
 						</tr>
 					</table>
-					<input type="submit" value="Check" name="submit" class="button">
+					<!-- <input type="submit" value="Check" name="submit" class="button"> -->
 				</form>
+				<a href="<?= base_url('index.php');?>" title="">
+					<div class="button">OK</div>
+				</a>
 			</div>
-			</form>
+			
 		</div>
 
 	</div>

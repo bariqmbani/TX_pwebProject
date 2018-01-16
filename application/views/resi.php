@@ -94,107 +94,63 @@
 		<h1 class="header">RESI</h1> <br>
 		<div class="row">
 
-			<div class="sender-info col-sm-12">
+			<div class="sender-info col-sm-6">
 
-				<form method="POST" name="sender-info" action="<?php echo base_url('index.php/c_index/transaksi')?>">
-					<h2 class="label">Sender Information</h2>
-					<table border="0">
-					<?php
-						//var_dump($users); die();
-        					foreach ($tampil as $row) {
+				<!-- <form method="POST" name="sender-info" action="<?php  base_url('index.php/c_index/transaksi')?>"> -->
+					<center>
+						<br>
+						<label>TRANSACTION ID</label>
+						<p><?php echo $transaksi->id_transaksi;?></p>
+						<br>
+						<label>SENDER</label>
+						<p><?php echo $users->nama;?></p>
+						<p><?php echo $users->no_telp;?></p>
+						<p><?php echo $transaksi->alamat_pengirim;?></p>
 
-          				?>
+					</center>
+			</div>
 
-          				<tr>	
-								<td>Transaction Number</td>
-          				</tr>
-          				<tr>	
-								<td><?php echo $row->id_transaksi;?></td>
-          				</tr>
-          				<?php }
-          				?>
-						<?php 
-							//var_dump($users); die();
-        					foreach ($users as $row) {
+			<div class="col-sm-6">
+				<center>
+					<br>
+					<label>DIRECTION</label>
+					<p><?php echo $tujuan->kota1 , " - " , $tujuan->kota2;?></p>
+					<br>
+					<label>RECEIVER</label>
+					<p><?php echo $transaksi->nama_penerima?></p>
+					<p><?php echo $transaksi->telp_penerima?></p>
+					<p><?php echo $transaksi->alamat_penerima?></p>
+				</center>
+			</div>
+			<div class="col-sm-4">
+				<center>
+					<br>
+					<br>
+					<label>Item name: </label> <p><?php echo $barang->nama_barang;?></p>
+				</center>
+			</div>
+			<div class="col-sm-4">
+				<center>
+					<br>
+					<br>
+					<label>Weight: </label> <p><?php echo $barang->berat_barang . " KG";?></p>
+				</center>
+			</div>
+			<div class="col-sm-4">
+				<center>
+					<br>
+					<br>
+					<label>Dimension: </label> <p><?php echo $barang->dimensi . " cm3";?></p>
+				</center>
+			</div>
+			<div class="col-sm-12">
+				<br>
+				<br>
+				<center>
+					<label>Price Total : Rp. <?php echo$transaksi->total_harga;?></label>
 
-          				?>
-          				<tr>
-          					<td><label>Shipper</label></td>
-          					<td><label>Consignee</label></td>
-          				</tr>          				
-						<tr>
-							<td><label><?php echo $row->nama;?></label></td>
-						</tr>
-
-						<tr>
-							<td><label><?php echo $row->no_telp;?></label></td>
-						</tr>
-						<?php
-				         }
-				         foreach ($response->result() as $row) {
-				        ?>
-
-						<tr>
-							<td><label>Item Name</label></td>
-							<td><label>: <?php echo $row->nama_barang;?></label></td>
-						</tr>
-
-						<tr>
-							<td><label>Weight</label></td>
-							<td><label>: <?php echo $row->berat_barang;?></label></td>
-						</tr>
-
-						<?php
-				         }
-				        ?>
-
-						<tr>
-							<td><label>Address</label></td>
-							<td><input class="address" type="text" name="alamat_pengirim"></td>
-						</tr>
-						
-					</table>
-					</div>
-
-				<div class="package-info col-sm-6">
-					<h2 class="label">Package Information</h2>
-					<table>
-						<tr>
-							<td><label>Item Name</label></td>
-							<td><input type="text" name="nama_barang"></td>
-						</tr>
-
-						<tr>
-							<td><label>Weight</label></td>
-							<td><input type="text" name="berat_barang"></td>
-							<!--<td><label>KG</label></td><br>-->
-						</tr>
-						
-						<tr>
-							
-							<td><label style="font-size: 12px">*berat dibulatkan<br> ke atas dalam kg</label></td>
-						</tr>
-
-						
-					</table>
-				</div>
-				
-				<div class="package-info col-sm-6">
-					<table class="dimension">
-						<tr>
-							<td><label>Dimension</label></td>
-							<td><input type="text" placeholder="L" name="L"></td>
-							<td><input type="text" placeholder="W" name="W"></td>
-							<td><input type="text" placeholder="H" name="H"></td>
-						</tr>
-					</table>
-				</div>
-
-				<div class="button deliver-btn">
-					<input type="submit" value="Deliver Now" name="submit" class="button">
-				</div>
-
-			</form>
+				</center>
+			</div>
 		</div>
 	</div>
 

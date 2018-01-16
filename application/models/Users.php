@@ -34,6 +34,19 @@ class Users extends CI_Model {
 					          ->get('barang'); 
 		return $id_barang->row();
 	}
+	
+	public function ambilId_transaksi($id_transaksi,$alamat_pengirim,$nama_penerima,$telp_penerima,$alamat_penerima,$total_harga){
+		$id_transaksi = $this->db->select('id_transaksi')
+								 ->where('alamat_pengirim',$alamat_pengirim)
+								 ->where('nama_penerima',$nama_penerima)
+								 ->where('telp_penerima',$telp_penerima)
+								 ->where('alamat_penerima',$alamat_pemerima)
+								 ->where('total_harga',$total_harga)
+								 ->get('transaksi');
+		return $id_transaksi->row();
+	}
+
+
 
 	public function deliv($barang,$transaksi,$dimensi){
 		//$q = $this->db->select('barang.id_barang, transaksi.id_barang') //select what we need
@@ -84,13 +97,25 @@ class Users extends CI_Model {
 		return $response;
 	}
 
-	public function tampilById($id){
-		$this->db->where('id_barang', $id);
+	public function tampilBarangById($id_barang){
+		$this->db->where('id_barang', $id_barang);
 		return $this->db->get('barang');
 	}
 
-	public function tampilTransaksi($id_barang){
-		$this->db->where('id_barang', $id_barang);
+	public function getIdTransaksi($id_barang) {
+		return $this->db->get_where('transaksi', array('id_barang' => $id_barang));
+	}
+
+	public function getDataTransaksi($id_transaksi) {
+		return $this->db->get_where('transaksi', array('id_transaksi' => $id_transaksi));
+	}
+
+	public function getDataTujuan($id_tujuan) {
+		return $this->db->get_where('tujuan', array('id_tujuan' => $id_tujuan));
+	}
+
+	public function tampilTransaksi($id_transaksi){
+		$this->db->where('id_transaksi', $id_transaksi);
 		return $this->db->get('transaksi');
 	}
 

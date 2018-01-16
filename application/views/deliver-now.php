@@ -91,11 +91,11 @@
 
 			<div class="sender-info col-sm-6">
 
-				<form method="POST" name="sender-info" action="<?php echo base_url('index.php/c_index/transaksi')?>">
+			<form method="POST" name="sender-info" action="<?php echo base_url('index.php/c_index/transaksi')?>">
 					<h2 class="label">Sender Information</h2>
 					<table border="0">
 						<?php 
-							//var_dump($users); die();
+							// var_dump($users); die();
         					foreach ($users as $row) {
 
           				?>
@@ -184,9 +184,9 @@
 				</div>
 
 				<div id="button">
-							<input type="submit" name="deliver" class="button" value="Deliver">
-					</div>
-					</form>
+					<input type="submit" name="deliver" class="button" value="Deliver">
+				</div>
+			</form>
 					<div id="order">
 							<div class="window-order">
 							<a href="#" class="close-button" title="Close">X</a>

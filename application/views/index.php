@@ -104,54 +104,20 @@
 			<div class="tracking col-sm-4">
 					<label>Tracking</label>
 					<br>
-					<form method="post" action="<?php echo base_url(); ?>c_index.php/resi">
-					<input type="text" placeholder="e.g 10200384">
+					<form method="post" action="<?php echo base_url('index.php/c_index/track'); ?>">
+					<input type="text" placeholder="e.g 10200384" name="id_transaksi">
 					<br>
 					<div id="button">
-							<a href="#resi">
 								<input type="submit" value="FIND" class="button">
-							</a>
-						</form>
-					</div>
-					<div id="resi">
-							<div class="window-resi">
-							<a href="#" class="close-button" title="Close">X</a>
-								<label>Tracking</label><br>
-								<table>
-								<tr>
-									<th>Transaction Number</th>
-									<th>Date Shipment</th>
-									<th>Destination</th>
-								</tr>
-								<tr>
-									<td>(empty)</td>
-									<td>(empty)</td>
-									<td>(empty)</td>
-								</tr>
-								</table>
-									<table>
-										<tr>
-											<th>Sipper</th>
-											<th>Consignee</th>
-										</tr>
-										<tr>
-											<td>(empty)</td>
-											<td>(empty)</td>
-										</tr>
-									</table>
-								<table>
-									<tr>
-										<th>Shipment Status</th>
-									</tr>
-									<tr>
-										<td>(empty)</td>
-									</tr>
-								</table>
-							</div>
-					</div>
+								</div>
+					</form>	
+					
 			</div>
 			<form method="POST" name="check" action="<?php echo base_url('index.php/c_index/check')?>">
-			<div class="fromto col-sm-4">
+			
+			<table>
+				<td>
+					<div class="fromto col-sm-4">
 				<form method="POST" name="fromto" action="<?php echo base_url('index.php/c_index/check')?>">
 					<table border="0">
 						<tr>
@@ -167,11 +133,10 @@
 							<td><input type="text" name="kota2"></td>
 						</tr>
 					</table>
-				</form>
 			</div>
-
-			<div class="tariff-check col-sm-4">
-				<form method="POST" name="tariff" action="<?php echo base_url('index.php/c_index/check')?>">
+				</td>
+				<td>
+					<div class="tariff-check col-sm-4">
 					<label>Tariff Check</label>
 					<table border="0">
 						<tr>
@@ -186,24 +151,17 @@
 							<td><input type="text" placeholder="H" name="H"></td>
 						</tr>
 					</table>
-					<div id="button">
-							<a href="#check-harga">Check</a>
-						</div>
-					<div id="check-harga">
-							<div class="window-check-harga">
-							<a href="#" class="close-button" title="Close">X</a>
-							<label>Tariff Check</label>
-							<table>
-								<tr>
-									<td>Cost</td>
-									<td>:</td>
-									<td>(empty)</td>
-								</tr>
-							</table>
+						<div id="button">
+								<input type="submit" value="FIND" class="button">
+								</div>
 				</form>
-			</div>
 			</form>
 		</div>
+				</td>
+			</table>
+			
+
+			
 
 	</div>
 

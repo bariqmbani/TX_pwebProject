@@ -169,16 +169,25 @@ class C_index extends CI_Controller {
 			'total_harga' => $total_harga
 			);
 
-
+		// $this->resi($transaksi);
 		/*
 		$tujuan = array(
 			'kota1' => $this->input->post('kota1'),
 			'kota2' => $this->input->post('kota2')
 		);*/
+		$id_transaksi = $this->users->getIdTransaksi($id_barang)->row()->id_transaksi;
+		 var_dump($id_transaksi); die();
+
+		// $data_resi = array(
+		// 	// 'username' => $this->session->userdata('username'),
+		// 	// '$id_barang' => $id_barang,
+		// 	'id_transaksi' => $id_transaksi;
+		// );
 
 		if($this->users->deliv($barang,$transaksi,$dimensi) == TRUE)
 		{
-			redirect(base_url('index.php/c_index/resi'));
+			// $this->resi($id_transaksi);
+			redirect(base_url('index.php/c_index/resi?id_transaksi=' . $id_transaksi));
 		}
 		else
 		{
@@ -197,13 +206,28 @@ class C_index extends CI_Controller {
 			$this->load->model('Users');
 
 			$username = $this->session->userdata('username');
-			$id = $this->input->post['id'];
-			$id_barang = $this->input->post['id_barang'];
-			$data["users"] = $this->users->tampilByUser($username)->result();
-			$data['response'] = $this->users->tampilById($id);
-			var_dump($data); die();
-			$data['tampil'] = $this->users->tampilTransaksi($id_barang);
-			//$data2["barang"] = $this->users->tampilBarang($username)->result();
+			// $id = $this->input->post['id'];
+			// $id_barang = $this->input->post['id_barang'];
+			// $id_transaksi = $this ->input->post['id_transaksi'];
+			
+
+			$id_transaksi = $this->input->get('id_transaksi');
+			$data_transaksi = $this->users->getDataTransaksi($id_transaksi)->row();
+			$id_barang = $data_transaksi->id_barang;
+			$data['barang'] = $this->users->tampilBarangById($id_barang)->row();
+			$data['users'] = $this->users->tampilByUser($username)->row();
+			// $data['barang'] = $this->users->tampilBarang($username)->result();
+			// $data['tampil'] = $this->users->tampilTransaksi($id_transaksi)->row();
+			$data['transaksi'] = $data_transaksi;
+			$data['tujuan'] = $this->users->getDataTujuan($data_transaksi->id_tujuan)->row();
+
+			// echo "<pre> Tujuan <br>";
+			// print_r($data['barang']); echo "<br> data transaksi <br><hr>";
+			// var_dump($data_transaksi); 
+			// echo "</pre>";
+			// die();
+
+
 		}
 		//var_dump($data['barang']); die();
 		$this->load->view('resi', $data);
@@ -224,11 +248,19 @@ class C_index extends CI_Controller {
 		$kota2 = $this->input->post('kota2');
 		//$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2);
 		$id_tujuan = $this->users->ambilId_tujuan($kota1,$kota2)->id_tujuan;
+		// var_dump($id_tujuan); die();
 		$harga_jarak = $this->users->harga_jarak($id_tujuan)->harga;
 		//$harga_jarak = $this->users->harga_jarak($id_tujuan);
-		$total_harga = $harga_berat + $harga_jarak;
+		$data['total_harga'] = $harga_berat + $harga_jarak;
 
-		redirect(base_url('index.php/c_index/tampil_check'));
+		$this->load->view('check', $data);
+
+		// redirect(base_url('index.php/c_index/check'));
+	}
+
+	public function track(){
+		$id_transaksi = $this->input->post('id_transaksi');
+		redirect(base_url('index.php/c_index/resi?id_transaksi=' . $id_transaksi));
 	}
 
 	public function tampil_check(){
